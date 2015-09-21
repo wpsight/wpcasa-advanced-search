@@ -1,0 +1,210 @@
+<?php
+/*
+Plugin Name: WPCasa Advanced Search
+Plugin URI: http://wpcasa.com/addon/wpcasa-advanced-search
+Description: Display expandable area with advanced options in property search form.
+Version: 1.0.0
+Author: WPSight
+Author URI: http://wpsight.com
+Requires at least: 4.0
+Tested up to: 4.3
+Text Domain: wpsight-advanced-search
+Domain Path: /languages
+
+	Copyright: 2015 Simon Rimkus
+	License: GNU General Public License v3.0
+	License URI: http://www.gnu.org/licenses/gpl-3.0.html
+*/
+
+// Exit if accessed directly
+
+if ( ! defined( 'ABSPATH' ) )
+	exit;
+
+/**
+ * WPSight_Advanced_Search class.
+ */
+class WPSight_Advanced_Search {
+
+	/**
+	 * Constructor
+	 */
+	public function __construct() {
+
+		// Define constants
+		
+		if ( ! defined( 'WPSIGHT_NAME' ) )
+			define( 'WPSIGHT_NAME', 'WPCasa' );
+		
+		if ( ! defined( 'WPSIGHT_DOMAIN' ) )
+			define( 'WPSIGHT_DOMAIN', 'wpcasa' );
+
+		define( 'WPSIGHT_ADVANCED_SEARCH_NAME', 'WPCasa Advanced Search' );
+		define( 'WPSIGHT_ADVANCED_SEARCH_DOMAIN', 'wpcasa-advanced-search' );
+		define( 'WPSIGHT_ADVANCED_SEARCH_VERSION', '1.0.0' );
+		define( 'WPSIGHT_ADVANCED_SEARCH_PLUGIN_DIR', untrailingslashit( plugin_dir_path( __FILE__ ) ) );
+		define( 'WPSIGHT_ADVANCED_SEARCH_PLUGIN_URL', untrailingslashit( plugins_url( basename( plugin_dir_path( __FILE__ ) ), basename( __FILE__ ) ) ) );
+		
+		// Cookie constants
+		
+		define( 'WPSIGHT_COOKIE_SEARCH_ADVANCED', WPSIGHT_DOMAIN . '_advanced_search' );
+
+		// Actions
+		
+		add_action( 'init', array( $this, 'load_plugin_textdomain' ) );
+		add_action( 'wp_enqueue_scripts', array( $this, 'frontend_scripts' ) );
+		
+		// Filters
+		
+		add_filter( 'wpsight_get_search_fields', array( $this, 'get_advanced_search_fields' ) );
+
+	}
+
+	/**
+	 *  Initialize the plugin when WPCasa is loaded.
+	 *
+	 *  @param	object	$wpsight
+	 *  @return object	$wpsight->advanced_search
+	 */
+	public static function init( $wpsight ) {
+		
+		if ( ! isset( $wpsight->advanced_search ) )
+			$wpsight->advanced_search = new self();
+
+		do_action_ref_array( 'wpsight_init_advanced_search', array( &$wpsight ) );
+
+		return $wpsight->advanced_search;
+	}
+
+	/**
+	 * load_plugin_textdomain()
+	 *
+	 * Set up localization for this plugin
+	 * loading the text domain.
+	 *
+	 * @uses load_plugin_textdomain()
+	 * @since 1.0.0
+	 */
+	public function load_plugin_textdomain() {
+		load_plugin_textdomain( 'wpsight-advanced-search', false, dirname( plugin_basename( __FILE__ ) ) . '/languages/' );
+	}
+
+	/**
+	 * frontend_scripts()
+	 *
+	 * Register and enqueue scripts and css.
+	 *
+	 * @uses wp_enqueue_style()
+	 * @uses wp_localize_script()
+	 * @since 1.0.0
+	 */
+	public function frontend_scripts() {
+
+		wp_enqueue_script( 'wpsight-listings-search-advanced', WPSIGHT_ADVANCED_SEARCH_PLUGIN_URL . '/assets/js/listings-search-advanced.js', array( 'jquery' ), WPSIGHT_ADVANCED_SEARCH_VERSION, true );
+		
+		// Localize scripts
+	
+		$data = array(
+			'cookie_path' 			   => COOKIEPATH,
+			'cookie_search_advanced'   => WPSIGHT_COOKIE_SEARCH_ADVANCED
+		);
+		
+		wp_localize_script( 'wpsight-listings-search-advanced', 'wpsight_localize', $data );
+
+	}
+
+	/**
+	 * advanced_search_fields()
+	 *
+	 * Register and enqueue scripts and css.
+	 *
+	 * @uses wp_enqueue_style()
+	 * @uses wp_localize_script()
+	 * @since 1.0.0
+	 */
+	public function get_advanced_search_fields( $fields_default ) {
+		
+		// Set advanced form fields
+		
+		$fields_advanced = array(
+
+			'min' => array(
+				'label' 		=> __( 'Price (min)', 'wpsight' ),
+				'key'			=> '_price',
+				'type' 			=> 'text',
+				'data_compare' 	=> '>=',
+				'data_type' 	=> 'numeric',
+				'advanced'		=> true,
+				'class'			=> 'width-1-4',
+		    	'priority'		=> 90
+			),
+
+			'max' => array(
+				'label' 		=> __( 'Price (max)', 'wpsight' ),
+				'key'			=> '_price',
+				'type' 			=> 'text',
+				'data_compare' 	=> '<=',
+				'data_type' 	=> 'numeric',
+				'advanced'		=> true,
+				'class'			=> 'width-1-4',
+		    	'priority'		=> 100
+			),
+
+			'orderby' => array(
+				'label'			=> __( 'Order by', 'wpsight' ),
+				'type' 			=> 'select',
+				'data' 			=> array(
+					'date'  => __( 'Date', 'wpsight' ),
+					'price' => __( 'Price', 'wpsight' ),
+					'title'	=> __( 'Title', 'wpsight' )
+				),
+				'default'		=> 'date',
+				'advanced'		=> true,
+				'class'			=> 'width-1-4',
+		    	'priority'		=> 110
+			),
+
+			'order' => array(
+				'label'			=> __( 'Order', 'wpsight' ),
+				'type' 			=> 'select',
+				'data' 			=> array(
+					'asc'  => __( 'asc', 'wpsight' ),
+					'desc' => __( 'desc', 'wpsight' )
+				),
+				'default'		=> 'desc',
+				'advanced'		=> true,
+				'class'			=> 'width-1-4',
+		    	'priority'		=> 120
+			),
+			
+			'feature' => array(
+				'label'			=> '',
+				'data' 			=> array(
+					// get_terms() options
+					'taxonomy'			=> 'feature',
+			    	'orderby'         	=> 'count', 
+					'order'           	=> 'DESC',
+					'operator'			=> 'AND', // can be OR
+					'number'			=> 8
+				),
+				'type' 			=> 'taxonomy_checkbox',
+				'advanced'		=> true,
+				'class'			=> 'width-auto',
+		    	'priority'		=> 130
+			)
+			
+		);
+		
+		$fields_advanced = apply_filters( 'wpsight_get_advanced_search_fields', $fields_advanced, $fields_default );
+		
+		// Merge default and advanced search
+		$fields = array_merge( $fields_default, $fields_advanced );
+		
+		// Apply filter and sort array by priority  
+		return wpsight_sort_array_by_priority( $fields );
+
+	}
+	
+}
+
+add_action( 'wpsight_init', array( 'WPSight_Advanced_Search', 'init' ) );
