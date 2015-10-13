@@ -1,0 +1,23 @@
+{
+  "name": "wpcasa-advanced-search",
+  "version": "1.0.0",
+  "description": "Display expandable area with advanced options in property search form.",
+  "main": "Gruntfile.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/wpsight/wpcasa-advanced-search"
+  },
+  "keywords": [
+    "wordpress"
+  ],
+  "author": "WPSight",
+  "license": "GPL-2.0",
+  "bugs": {
+    "url": "https://github.com/wpsight/wpcasa-advanced-search/issues"
+  },
+  "homepage": "http://wpcasa.com/",
+  "devDependencies": {
+    "grunt-wp-deploy": "^1.1.0",
+    "load-grunt-tasks": "^3.3.0"
+  }
+}
