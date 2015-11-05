@@ -1,14 +1,14 @@
 <?php
 /*
 Plugin Name: WPCasa Advanced Search
-Plugin URI: http://wpcasa.com/addon/wpcasa-advanced-search
-Description: Display expandable area with advanced options in property search form.
+Plugin URI: http://wpcasa.com/downloads/wpcasa-advanced-search
+Description: Display an expandable area with advanced options in property search form.
 Version: 1.0.0
 Author: WPSight
 Author URI: http://wpsight.com
 Requires at least: 4.0
-Tested up to: 4.3
-Text Domain: wpsight-advanced-search
+Tested up to: 4.3.1
+Text Domain: wpcasa-advanced-search
 Domain Path: /languages
 
 	Copyright: 2015 Simon Rimkus
@@ -17,7 +17,6 @@ Domain Path: /languages
 */
 
 // Exit if accessed directly
-
 if ( ! defined( 'ABSPATH' ) )
 	exit;
 
@@ -61,10 +60,15 @@ class WPSight_Advanced_Search {
 	}
 
 	/**
-	 *  Initialize the plugin when WPCasa is loaded.
+	 *	init()
+	 *
+	 *	Initialize the plugin when WPCasa is loaded.
 	 *
 	 *  @param	object	$wpsight
+	 *	@uses	do_action_ref_array()
 	 *  @return object	$wpsight->advanced_search
+	 *
+	 *	@since 1.0.0
 	 */
 	public static function init( $wpsight ) {
 		
@@ -77,26 +81,29 @@ class WPSight_Advanced_Search {
 	}
 
 	/**
-	 * load_plugin_textdomain()
+	 *	load_plugin_textdomain()
+	 *	
+	 *	Set up localization for this plugin
+	 *	loading the text domain.
+	 *	
+	 *	@uses	load_plugin_textdomain()
+	 *	@uses	plugin_basename()
 	 *
-	 * Set up localization for this plugin
-	 * loading the text domain.
-	 *
-	 * @uses load_plugin_textdomain()
-	 * @since 1.0.0
+	 *	@since 1.0.0
 	 */
 	public function load_plugin_textdomain() {
-		load_plugin_textdomain( 'wpsight-advanced-search', false, dirname( plugin_basename( __FILE__ ) ) . '/languages/' );
+		load_plugin_textdomain( 'wpcasa-advanced-search', false, dirname( plugin_basename( __FILE__ ) ) . '/languages/' );
 	}
 
 	/**
-	 * frontend_scripts()
+	 *	frontend_scripts()
+	 *	
+	 *	Register and enqueue scripts and css.
+	 *	
+	 *	@uses	wp_enqueue_style()
+	 *	@uses	wp_localize_script()
 	 *
-	 * Register and enqueue scripts and css.
-	 *
-	 * @uses wp_enqueue_style()
-	 * @uses wp_localize_script()
-	 * @since 1.0.0
+	 *	@since 1.0.0
 	 */
 	public function frontend_scripts() {
 
@@ -114,13 +121,13 @@ class WPSight_Advanced_Search {
 	}
 
 	/**
-	 * advanced_search_fields()
+	 *	advanced_search_fields()
+	 *	
+	 *	Register and enqueue scripts and css.
+	 *	
+	 *	@uses	wpsight_sort_array_by_priority()
 	 *
-	 * Register and enqueue scripts and css.
-	 *
-	 * @uses wp_enqueue_style()
-	 * @uses wp_localize_script()
-	 * @since 1.0.0
+	 *	@since 1.0.0
 	 */
 	public function get_advanced_search_fields( $fields_default ) {
 		
@@ -129,7 +136,7 @@ class WPSight_Advanced_Search {
 		$fields_advanced = array(
 
 			'min' => array(
-				'label' 		=> __( 'Price (min)', 'wpsight' ),
+				'label' 		=> __( 'Price (min)', 'wpcasa-advanced-search' ),
 				'key'			=> '_price',
 				'type' 			=> 'text',
 				'data_compare' 	=> '>=',
@@ -140,7 +147,7 @@ class WPSight_Advanced_Search {
 			),
 
 			'max' => array(
-				'label' 		=> __( 'Price (max)', 'wpsight' ),
+				'label' 		=> __( 'Price (max)', 'wpcasa-advanced-search' ),
 				'key'			=> '_price',
 				'type' 			=> 'text',
 				'data_compare' 	=> '<=',
@@ -151,7 +158,7 @@ class WPSight_Advanced_Search {
 			),
 
 			'orderby' => array(
-				'label'			=> __( 'Order by', 'wpsight' ),
+				'label'			=> __( 'Order by', 'wpcasa-advanced-search' ),
 				'type' 			=> 'select',
 				'data' 			=> array(
 					'date'  => __( 'Date', 'wpsight' ),
@@ -165,11 +172,11 @@ class WPSight_Advanced_Search {
 			),
 
 			'order' => array(
-				'label'			=> __( 'Order', 'wpsight' ),
+				'label'			=> __( 'Order', 'wpcasa-advanced-search' ),
 				'type' 			=> 'select',
 				'data' 			=> array(
-					'asc'  => __( 'asc', 'wpsight' ),
-					'desc' => __( 'desc', 'wpsight' )
+					'asc'  => __( 'asc', 'wpcasa-advanced-search' ),
+					'desc' => __( 'desc', 'wpcasa-advanced-search' )
 				),
 				'default'		=> 'desc',
 				'advanced'		=> true,
@@ -207,4 +214,5 @@ class WPSight_Advanced_Search {
 	
 }
 
+// Initialize plugin on wpsight_init
 add_action( 'wpsight_init', array( 'WPSight_Advanced_Search', 'init' ) );
