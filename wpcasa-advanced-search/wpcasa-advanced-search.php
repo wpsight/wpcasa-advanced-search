@@ -1,7 +1,7 @@
 <?php
 /*
 Plugin Name: WPCasa Advanced Search
-Plugin URI: http://wpcasa.com/downloads/wpcasa-advanced-search
+Plugin URI: https://wpcasa.com/downloads/wpcasa-advanced-search
 Description: Display an expandable area with advanced options in property search form.
 Version: 1.0.0
 Author: WPSight
@@ -21,7 +21,7 @@ if ( ! defined( 'ABSPATH' ) )
 	exit;
 
 /**
- * WPSight_Advanced_Search class.
+ *	WPSight_Advanced_Search class
  */
 class WPSight_Advanced_Search {
 
@@ -106,8 +106,11 @@ class WPSight_Advanced_Search {
 	 *	@since 1.0.0
 	 */
 	public function frontend_scripts() {
+		
+		// Script debugging?
+		$suffix = SCRIPT_DEBUG ? '' : '.min';
 
-		wp_enqueue_script( 'wpsight-listings-search-advanced', WPSIGHT_ADVANCED_SEARCH_PLUGIN_URL . '/assets/js/listings-search-advanced.js', array( 'jquery' ), WPSIGHT_ADVANCED_SEARCH_VERSION, true );
+		wp_enqueue_script( 'wpsight-listings-search-advanced', WPSIGHT_ADVANCED_SEARCH_PLUGIN_URL . '/assets/js/listings-search-advanced' . $suffix . '.js', array( 'jquery' ), WPSIGHT_ADVANCED_SEARCH_VERSION, true );
 		
 		// Localize scripts
 	
@@ -161,9 +164,9 @@ class WPSight_Advanced_Search {
 				'label'			=> __( 'Order by', 'wpcasa-advanced-search' ),
 				'type' 			=> 'select',
 				'data' 			=> array(
-					'date'  => __( 'Date', 'wpsight' ),
-					'price' => __( 'Price', 'wpsight' ),
-					'title'	=> __( 'Title', 'wpsight' )
+					'date'  => __( 'Date', 'wpcasa-advanced-search' ),
+					'price' => __( 'Price', 'wpcasa-advanced-search' ),
+					'title'	=> __( 'Title', 'wpcasa-advanced-search' )
 				),
 				'default'		=> 'date',
 				'advanced'		=> true,
