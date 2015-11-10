@@ -1,0 +1,78 @@
+#, fuzzy
+msgid ""
+msgstr ""
+"Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
+"Project-Id-Version: WPCasa Advanced Search\n"
+"POT-Creation-Date: 2015-11-10 12:54+0100\n"
+"PO-Revision-Date: 2015-11-10 12:54+0100\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.8.6\n"
+"X-Poedit-Basepath: ..\n"
+"X-Poedit-WPHeader: wpcasa-advanced-search.php\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-KeywordsList: __;_e;_n:1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;esc_attr__;"
+"esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c;_n_noop:1,2;"
+"_nx_noop:3c,1,2;__ngettext_noop:1,2\n"
+"X-Poedit-SearchPath-0: .\n"
+"X-Poedit-SearchPathExcluded-0: *.js\n"
+
+#: wpcasa-advanced-search.php:142
+msgid "Price (min)"
+msgstr ""
+
+#: wpcasa-advanced-search.php:153
+msgid "Price (max)"
+msgstr ""
+
+#: wpcasa-advanced-search.php:164
+msgid "Order by"
+msgstr ""
+
+#: wpcasa-advanced-search.php:167
+msgid "Date"
+msgstr ""
+
+#: wpcasa-advanced-search.php:168
+msgid "Price"
+msgstr ""
+
+#: wpcasa-advanced-search.php:169
+msgid "Title"
+msgstr ""
+
+#: wpcasa-advanced-search.php:178
+msgid "Order"
+msgstr ""
+
+#: wpcasa-advanced-search.php:181
+msgid "asc"
+msgstr ""
+
+#: wpcasa-advanced-search.php:182
+msgid "desc"
+msgstr ""
+
+#. Plugin Name of the plugin/theme
+msgid "WPCasa Advanced Search"
+msgstr ""
+
+#. Plugin URI of the plugin/theme
+msgid "https://wpcasa.com/downloads/wpcasa-advanced-search"
+msgstr ""
+
+#. Description of the plugin/theme
+msgid ""
+"Display an expandable area with advanced options in property search form."
+msgstr ""
+
+#. Author of the plugin/theme
+msgid "WPSight"
+msgstr ""
+
+#. Author URI of the plugin/theme
+msgid "http://wpsight.com"
+msgstr ""
