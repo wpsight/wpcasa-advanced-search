@@ -40,7 +40,8 @@ No, this is an add-on plugin for the WPCasa real estate framework and will not w
 
 == Screenshots ==
 
-1. Advanced property search form
+1. Advanced property search form (closed)
+2. Advanced property search form (open)
 
 == Changelog ==
 
