@@ -1,5 +1,5 @@
 === WPCasa Advanced Search ===
-Contributors: wpsight, simonrimkus
+Contributors: wpsight, jancbeck, simonrimkus
 Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=ZRR56U2VTPZAQ
 Tags: real estate, realestate, search, advanced search, house, listing, listings, property, properties, wpcasa
 Requires at least: 4.0
@@ -12,9 +12,11 @@ Display an expandable area with advanced options in WPCasa property search form.
 
 == Description ==
 
-WPCasa is a WordPress solution that provides an intuitive way to manage property listings and create first-class real estate websites.
+By simply activating this add-on plugin advanced search options will be added to the default WPCasa property search form. These options are placed in an expandable area that can be opened or closed by the click on the advanced button that is now displayed in the form.
 
 > Please notice that this plugin is an add-on for [WPCasa](https://wordpress.org/plugins/wpcasa/) and will NOT work without the core plugin.
+
+WPCasa is a WordPress solution that provides an intuitive way to manage property listings and create first-class real estate websites.
 
 * Website: [wpcasa.com](https://wpcasa.com)
 * Demo: [demo.wpcasa.com](http://demo.wpcasa.com)
@@ -44,6 +46,11 @@ No, this is an add-on plugin for the WPCasa real estate framework and will not w
 2. Advanced property search form (open)
 
 == Changelog ==
+
+= 1.0.0 =
+* Initial release
+
+== Upgrade Notice ==
 
 = 1.0.0 =
 * Initial release
