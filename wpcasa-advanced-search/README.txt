@@ -20,7 +20,7 @@ WPCasa is a WordPress solution that provides an intuitive way to manage property
 
 * Website: [wpcasa.com](https://wpcasa.com)
 * Demo: [demo.wpcasa.com](http://demo.wpcasa.com)
-* Documentation: [docs.wpcasa.com](http://docs.wpcasa.com)
+* Documentation: [docs.wpcasa.com](http://docs.wpsight.com)
 
 == Installation ==
 
