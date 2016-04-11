@@ -7,7 +7,7 @@ Version: 1.0.0
 Author: WPSight
 Author URI: http://wpsight.com
 Requires at least: 4.0
-Tested up to: 4.4
+Tested up to: 4.5
 Text Domain: wpcasa-advanced-search
 Domain Path: /languages
 
@@ -115,8 +115,8 @@ class WPSight_Advanced_Search {
 		// Localize scripts
 	
 		$data = array(
-			'cookie_path' 			   => COOKIEPATH,
-			'cookie_search_advanced'   => WPSIGHT_COOKIE_SEARCH_ADVANCED
+			'cookie_path'				=> COOKIEPATH,
+			'cookie_search_advanced'	=> WPSIGHT_COOKIE_SEARCH_ADVANCED
 		);
 		
 		wp_localize_script( 'wpsight-listings-search-advanced', 'wpsight_localize', $data );
@@ -191,11 +191,11 @@ class WPSight_Advanced_Search {
 				'label'			=> '',
 				'data' 			=> array(
 					// get_terms() options
-					'taxonomy'			=> 'feature',
-			    	'orderby'         	=> 'count', 
-					'order'           	=> 'DESC',
-					'operator'			=> 'AND', // can be OR
-					'number'			=> 8
+					'taxonomy'	=> 'feature',
+			    	'orderby'	=> 'count', 
+					'order'		=> 'DESC',
+					'operator'	=> 'AND', // can be OR
+					'number'	=> 8
 				),
 				'type' 			=> 'taxonomy_checkbox',
 				'advanced'		=> true,
