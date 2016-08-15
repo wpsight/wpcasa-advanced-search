@@ -7,7 +7,7 @@ Version: 1.0.0
 Author: WPSight
 Author URI: http://wpsight.com
 Requires at least: 4.0
-Tested up to: 4.5
+Tested up to: 4.6
 Text Domain: wpcasa-advanced-search
 Domain Path: /languages
 
