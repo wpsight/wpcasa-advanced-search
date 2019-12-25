@@ -1,0 +1,84 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: WPCasa Advanced Search\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-11-10 12:54+0100\n"
+"PO-Revision-Date: 2016-08-23 06:23+0000\n"
+"Last-Translator: wpsight <support@wpsight.com>\n"
+"Language-Team: Spanish (Spain)\n"
+"Language: es-ES\n"
+"Plural-Forms: nplurals=2; plural=n != 1\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Generator: Loco - https://localise.biz/\n"
+"X-Poedit-Basepath: ..\n"
+"X-Poedit-WPHeader: wpcasa-advanced-search.php\n"
+"X-Poedit-KeywordsList: _:1;gettext:1;dgettext:2;ngettext:1,2;dngettext:2,3;"
+"__:1;_e:1;_c:1;_n:1,2;_n_noop:1,2;_nc:1,2;__ngettext:1,2;__ngettext_noop:1,2;"
+"_x:1,2c;_ex:1,2c;_nx:1,2,4c;_nx_noop:1,2,3c;_n_js:1,2;_nx_js:1,2,3c;"
+"esc_attr__:1;esc_html__:1;esc_attr_e:1;esc_html_e:1;esc_attr_x:1,2c;"
+"esc_html_x:1,2c;comments_number_link:2,3;t:1;st:1;trans:1;transChoice:1,2\n"
+"X-Poedit-SearchPath-0: .\n"
+"X-Poedit-SearchPathExcluded-0: *.js\n"
+"X-Loco-Target-Locale: es_ES"
+
+#: wpcasa-advanced-search.php:142
+msgid "Price (min)"
+msgstr "Precio (mín)"
+
+#: wpcasa-advanced-search.php:153
+msgid "Price (max)"
+msgstr "Precio (máx)"
+
+#: wpcasa-advanced-search.php:164
+msgid "Order by"
+msgstr "Ordenar por"
+
+#: wpcasa-advanced-search.php:167
+msgid "Date"
+msgstr "Fecha"
+
+#: wpcasa-advanced-search.php:168
+msgid "Price"
+msgstr "Precio"
+
+#: wpcasa-advanced-search.php:169
+msgid "Title"
+msgstr "Título"
+
+#: wpcasa-advanced-search.php:178
+msgid "Order"
+msgstr "Ordenar"
+
+#: wpcasa-advanced-search.php:181
+msgid "asc"
+msgstr "asc"
+
+#: wpcasa-advanced-search.php:182
+msgid "desc"
+msgstr "desc"
+
+#. Plugin Name of the plugin/theme
+msgid "WPCasa Advanced Search"
+msgstr "WPCasa Advanced Search"
+
+#. Plugin URI of the plugin/theme
+msgid "https://wpcasa.com/downloads/wpcasa-advanced-search"
+msgstr "https://wpcasa.com/downloads/wpcasa-advanced-search"
+
+#. Description of the plugin/theme
+msgid ""
+"Display an expandable area with advanced options in property search form."
+msgstr ""
+"Muestra un área expandible con opciones avanzadas en el formulario de "
+"búsqueda de propiedades."
+
+#. Author of the plugin/theme
+msgid "WPSight"
+msgstr "WPSight"
+
+#. Author URI of the plugin/theme
+msgid "http://wpsight.com"
+msgstr "http://wpsight.com"
