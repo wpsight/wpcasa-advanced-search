@@ -6,7 +6,7 @@ Requires at least: 4.0
 Tested up to: 6.4
 Stable tag: 1.0.0
 License: GPLv2 or later
-License URI: http://www.gnu.org/licenses/gpl-2.0.html
+License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
 Display an expandable area with advanced options in WPCasa property search form.
 
@@ -19,8 +19,8 @@ By activating this add-on plugin an advanced search options will be added to the
 WPCasa is a WordPress solution that provides an intuitive way to manage property listings and create first-class real estate websites.
 
 * Website: [wpcasa.com](https://wpcasa.com)
-* Demo: [demo.wpcasa.com](http://demo.wpcasa.com)
-* Documentation: [docs.wpcasa.com](http://docs.wpsight.com)
+* Demo: [demo.wpcasa.com](https://demo.wpcasa.com)
+* Documentation: [docs.wpcasa.com](https://docs.wpsight.com)
 
 == Installation ==
 
