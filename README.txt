@@ -1,6 +1,6 @@
 === WPCasa Advanced Search ===
-Contributors: wpsight, joehana
-Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=7EVKNVA7QFXZ8
+Contributors: wpsight, kybernetikservices, joehana
+Donate link: https://www.paypal.com/donate/?hosted_button_id=SYJNVSP2BKTQ4
 Tags: real estate, realestate, search, advanced search, house, listing, listings, property, properties, wpcasa
 Requires at least: 4.0
 Tested up to: 6.4
