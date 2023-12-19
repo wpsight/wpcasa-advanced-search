@@ -1,20 +1,17 @@
 <?php
 /*
-Plugin Name: WPCasa Advanced Search
-Plugin URI: https://wpcasa.com/downloads/wpcasa-advanced-search
-Description: Display an expandable area with advanced options in WPCasa property search form.
-Version: 1.0.0
-Author: WPSight
-Author URI: http://wpsight.com
-Requires at least: 4.0
-Tested up to: 4.6
-Text Domain: wpcasa-advanced-search
-Domain Path: /languages
-
-	Copyright: 2015 Simon Rimkus
-	License: GNU General Public License v2.0 or later
-	License URI: http://www.gnu.org/licenses/gpl-2.0.html
-*/
+ * Plugin Name:       WPCasa Advanced Search
+ * Plugin URI:        https://wpcasa.com/downloads/wpcasa-advanced-search
+ * Description:       Display an expandable area with advanced options in WPCasa property search form.
+ * Version:           1.1.0
+ * Requires at least: 4.6
+ * Requires PHP:      7.2
+ * Author:            WPSight
+ * Author URI:        https://wpcasa.com/
+ * License:           GPL v2 or later
+ * License URI:       https://www.gnu.org/licenses/gpl-2.0.html
+ * Text Domain:       wpcasa-advanced-search
+ */
 
 // Exit if accessed directly
 if ( ! defined( 'ABSPATH' ) )
@@ -40,7 +37,7 @@ class WPSight_Advanced_Search {
 
 		define( 'WPSIGHT_ADVANCED_SEARCH_NAME', 'WPCasa Advanced Search' );
 		define( 'WPSIGHT_ADVANCED_SEARCH_DOMAIN', 'wpcasa-advanced-search' );
-		define( 'WPSIGHT_ADVANCED_SEARCH_VERSION', '1.0.0' );
+		define( 'WPSIGHT_ADVANCED_SEARCH_VERSION', '1.1.0' );
 		define( 'WPSIGHT_ADVANCED_SEARCH_PLUGIN_DIR', untrailingslashit( plugin_dir_path( __FILE__ ) ) );
 		define( 'WPSIGHT_ADVANCED_SEARCH_PLUGIN_URL', untrailingslashit( plugins_url( basename( plugin_dir_path( __FILE__ ) ), basename( __FILE__ ) ) ) );
 		
@@ -50,7 +47,6 @@ class WPSight_Advanced_Search {
 
 		// Actions
 		
-		add_action( 'init', array( $this, 'load_plugin_textdomain' ) );
 		add_action( 'wp_enqueue_scripts', array( $this, 'frontend_scripts' ) );
 		
 		// Filters
@@ -78,21 +74,6 @@ class WPSight_Advanced_Search {
 		do_action_ref_array( 'wpsight_init_advanced_search', array( &$wpsight ) );
 
 		return $wpsight->advanced_search;
-	}
-
-	/**
-	 *	load_plugin_textdomain()
-	 *	
-	 *	Set up localization for this plugin
-	 *	loading the text domain.
-	 *	
-	 *	@uses	load_plugin_textdomain()
-	 *	@uses	plugin_basename()
-	 *
-	 *	@since 1.0.0
-	 */
-	public function load_plugin_textdomain() {
-		load_plugin_textdomain( 'wpcasa-advanced-search', false, dirname( plugin_basename( __FILE__ ) ) . '/languages/' );
 	}
 
 	/**
