@@ -1,16 +1,25 @@
 <?php
-/*
+/**
+ * WPCasa Advanced Search
+ *
+ * @package           WPCasaAdvancedSearch
+ * @author            WPSight
+ * @copyright         2024 Kybernetik Services GmbH
+ * @license           GPL-2.0-or-later
+ *
+ * @wordpress-plugin
  * Plugin Name:       WPCasa Advanced Search
  * Plugin URI:        https://wpcasa.com/downloads/wpcasa-advanced-search
  * Description:       Display an expandable area with advanced options in WPCasa property search form.
- * Version:           1.1.0
- * Requires at least: 4.6
+ * Version:           1.1.1
+ * Requires at least: 6.2
  * Requires PHP:      7.2
+ * Requires Plugins:  wpcasa
  * Author:            WPSight
- * Author URI:        https://wpcasa.com/
- * License:           GPL v2 or later
- * License URI:       https://www.gnu.org/licenses/gpl-2.0.html
+ * Author URI:        https://wpcasa.com
  * Text Domain:       wpcasa-advanced-search
+ * License:           GPL v2 or later
+ * License URI:       http://www.gnu.org/licenses/gpl-2.0.txt
  */
 
 // Exit if accessed directly
@@ -37,7 +46,7 @@ class WPSight_Advanced_Search {
 
 		define( 'WPSIGHT_ADVANCED_SEARCH_NAME', 'WPCasa Advanced Search' );
 		define( 'WPSIGHT_ADVANCED_SEARCH_DOMAIN', 'wpcasa-advanced-search' );
-		define( 'WPSIGHT_ADVANCED_SEARCH_VERSION', '1.1.0' );
+		define( 'WPSIGHT_ADVANCED_SEARCH_VERSION', '1.1.1' );
 		define( 'WPSIGHT_ADVANCED_SEARCH_PLUGIN_DIR', untrailingslashit( plugin_dir_path( __FILE__ ) ) );
 		define( 'WPSIGHT_ADVANCED_SEARCH_PLUGIN_URL', untrailingslashit( plugins_url( basename( plugin_dir_path( __FILE__ ) ), basename( __FILE__ ) ) ) );
 		

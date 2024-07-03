@@ -1,10 +1,10 @@
 === WPCasa Advanced Search ===
-Contributors: wpsight, kybernetikservices, joehana
+Contributors: wpsight, kybernetikservices
 Donate link: https://www.paypal.com/donate/?hosted_button_id=SYJNVSP2BKTQ4
 Tags: real estate, realestate, search, advanced search, house, listing, listings, property, properties, wpcasa
-Requires at least: 4.6
-Tested up to: 6.4
-Stable tag: 1.1.0
+Requires at least: 6.2
+Tested up to: 6.6
+Stable tag: 1.1.1
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -20,7 +20,15 @@ WPCasa is a WordPress solution that provides an intuitive way to manage property
 
 * Website: [wpcasa.com](https://wpcasa.com)
 * Demo: [demo.wpcasa.com](https://demo.wpcasa.com)
-* Documentation: [docs.wpcasa.com](https://docs.wpsight.com)
+* Documentation: [docs.wpcasa.com](https://docs.wpcasa.com)
+
+== Contributors ==
+This is a list of contributors to WPCasa Advanced Search.
+Many thanks to all of them for contributing and making WPCasa Advanced Search even better.
+
+[Kybernetik Services](https://www.kybernetik-services.com/?utm_source=wordpress_org&utm_medium=plugin&utm_campaign=wpcasa&utm_content=readme)
+[Joe Hana](https://wordpress.org/support/users/joehana/)
+[codestylist](https://wordpress.org/support/users/codestylist/)
 
 == Installation ==
 
@@ -51,6 +59,11 @@ No, this is an add-on plugin for the WPCasa real estate framework and will not w
 2. Advanced property search form (open)
 
 == Changelog ==
+
+= 1.1.1 =
+* Code improvements
+* WordPress 6.5-6.6 compatibility
+* Updated plugin header
 
 = 1.1.0 =
 * Supports translation hosted on WordPress
