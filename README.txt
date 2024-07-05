@@ -62,7 +62,7 @@ No, this is an add-on plugin for the WPCasa real estate framework and will not w
 
 = 1.1.1 =
 * Code improvements
-* WordPress 6.5 compatibility
+* WordPress 6.5-6.6 compatibility
 * Updated plugin header
 
 = 1.1.0 =
