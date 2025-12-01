@@ -40,7 +40,7 @@ class WPSight_Advanced_Search {
 		
 		if ( ! defined( 'WPSIGHT_NAME' ) )
 			define( 'WPSIGHT_NAME', 'WPCasa' );
-		
+
 		if ( ! defined( 'WPSIGHT_DOMAIN' ) )
 			define( 'WPSIGHT_DOMAIN', 'wpcasa' );
 
@@ -49,17 +49,17 @@ class WPSight_Advanced_Search {
 		define( 'WPSIGHT_ADVANCED_SEARCH_VERSION', '1.1.1' );
 		define( 'WPSIGHT_ADVANCED_SEARCH_PLUGIN_DIR', untrailingslashit( plugin_dir_path( __FILE__ ) ) );
 		define( 'WPSIGHT_ADVANCED_SEARCH_PLUGIN_URL', untrailingslashit( plugins_url( basename( plugin_dir_path( __FILE__ ) ), basename( __FILE__ ) ) ) );
-		
+
 		// Cookie constants
-		
+
 		define( 'WPSIGHT_COOKIE_SEARCH_ADVANCED', WPSIGHT_DOMAIN . '_advanced_search' );
 
 		// Actions
-		
+
 		add_action( 'wp_enqueue_scripts', array( $this, 'frontend_scripts' ) );
-		
+
 		// Filters
-		
+
 		add_filter( 'wpsight_get_search_fields', array( $this, 'get_advanced_search_fields' ) );
 
 	}
@@ -69,16 +69,18 @@ class WPSight_Advanced_Search {
 	 *
 	 *	Initialize the plugin when WPCasa is loaded.
 	 *
-	 *  @param	object	$wpsight
-	 *	@uses	do_action_ref_array()
-	 *  @return object	$wpsight->advanced_search
+	 *  @param object $wpsight
 	 *
-	 *	@since 1.0.0
+	 *	@return object	$wpsight->advanced_search
+	 *
+	 *	@uses	do_action_ref_array()
+	 *  @since 1.0.0
 	 */
 	public static function init( $wpsight ) {
 		
-		if ( ! isset( $wpsight->advanced_search ) )
+		if ( ! isset( $wpsight->advanced_search ) ) {
 			$wpsight->advanced_search = new self();
+		}
 
 		do_action_ref_array( 'wpsight_init_advanced_search', array( &$wpsight ) );
 
